@@ -1,0 +1,441 @@
+/*
+ * Stylesheet for Makki General Engineering Services
+ *
+ * The colour palette is derived from the supplied logo and consists of:
+ *   --primary: a warm yellow/orange used for highlights and call‑to‑action elements;
+ *   --secondary: a deep charcoal grey for text and major accents;
+ *   --dark: a deeper tone used sparingly for contrast;
+ *   --light-bg: a soft off‑white for backgrounds.
+ */
+
+:root {
+    --primary: #f5b84c;
+    --secondary: #404348;
+    --dark: #272b30;
+    --light-bg: #f5f5f5;
+    --text-color: #333333;
+}
+
+/* Global reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Container wrapper to constrain content width */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation styles */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+nav .logo img {
+    height: 45px;
+    margin-right: 0.5rem;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav .nav-links li {
+    /* no additional styles required */
+}
+
+nav .nav-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: var(--primary);
+}
+
+nav .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+nav .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hero section */
+header#hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    padding: 4rem 1rem;
+    background: linear-gradient(120deg, var(--secondary) 30%, var(--primary) 70%);
+    color: #ffffff;
+}
+
+header#hero .hero-content {
+    max-width: 800px;
+    z-index: 2;
+}
+
+header#hero .hero-logo {
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+header#hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--primary);
+    color: var(--dark);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #e2a23a;
+}
+
+header#hero .hero-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+}
+
+header#hero .hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Section base styles */
+section {
+    padding: 4rem 1rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* About section */
+#about p {
+    max-width: 900px;
+    margin: 1rem auto;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Services section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Projects section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Placeholder project image uses gradient derived from logo colours */
+.placeholder-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.project-card h3 {
+    margin: 1rem;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.project-card p {
+    margin: 0 1rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.projects-note {
+    margin-top: 1rem;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
+/* Contact section */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#contact form {
+    flex: 1 1 350px;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#contact .contact-info {
+    flex: 1 1 250px;
+    color: var(--secondary);
+}
+
+#contact .contact-info h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    font-size: 1.4rem;
+}
+
+#contact .contact-info p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#contact .contact-info .social-icons {
+    margin-top: 1rem;
+}
+
+#contact .contact-info .social-icons a {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+    color: var(--secondary);
+    transition: color 0.3s ease;
+}
+
+#contact .contact-info .social-icons a:hover {
+    color: var(--primary);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--secondary);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(245, 184, 76, 0.3);
+}
+
+/* Footer */
+footer {
+    background: var(--secondary);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #ffffff;
+        width: 200px;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        padding: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    nav .nav-links.open {
+        transform: translateX(0);
+    }
+
+    nav .nav-links li {
+        margin-bottom: 1rem;
+    }
+
+    nav .hamburger {
+        display: flex;
+    }
+
+    header#hero h1 {
+        font-size: 2rem;
+    }
+    header#hero .hero-logo {
+        height: 90px;
+    }
+}
+
+@media (max-width: 500px) {
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-content {
+        flex-direction: column;
+    }
+    nav .nav-links {
+        width: 160px;
+    }
+}
